@@ -9,10 +9,12 @@ app.use(cors({
 
 app.use(express.json());
 
-const imagekit = new ImageKit({
-    publicKey: process.env.IMAGEKIT_PUBLIC_KEY,
-    privateKey: process.env.IMAGEKIT_PRIVATE_KEY,
-    urlEndpoint: process.env.IMAGEKIT_URL_ENDPOINT
+const db = new Client({
+    user: process.env.USER_DB_POSTGRES,
+    host: process.env.HOST_DB_POSTGRES,
+    database: process.env.DATABASE_DB_POSTGRES,
+    password: process.env.PASSWORD_DB_POSTGRES,
+    port: process.env.PORT_DB_POSTGRES,
 });
 
 db.connect();
