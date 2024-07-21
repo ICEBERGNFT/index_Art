@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const { Client } = require('pg');
 
 app.use(cors({
     origin: 'https://icebergnft.github.io', // Restringe los orígenes permitidos
